@@ -1,0 +1,7 @@
+memcache:
+  listen: 127.0.0.1:11211
+  hash: fnv1a_64
+  distribution: ketama
+  auto_eject_hosts: true
+  servers:{{range $endpoint := .}}
+    - {{$endpoint}}:1{{end}}
